@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.cloud.sys.dao.IDepartmentDao">
+
+    <sql id="DepartmentColumns">
+    a.id,
+    a.dept_name,
+    a.dept_address,
+    a.dept_phone,
+    a.type,
+    a.parent_id,
+    a.remark,
+    a.create_date,
+    a.status,
+    a.update_date,
+    a.creator,
+    a.updater
+    </sql>
+    <sql id="DepartmentWhere">
+    	<where>
+	    	 <if test="id!=null">
+	            a.id=#{id}
+	         </if>
+	    	 <if test="deptName!=null">
+	            a.dept_name=#{deptName}
+	         </if>
+	    	 <if test="deptAddress!=null">
+	            a.dept_address=#{deptAddress}
+	         </if>
+	    	 <if test="deptPhone!=null">
+	            a.dept_phone=#{deptPhone}
+	         </if>
+	    	 <if test="type!=null">
+	            a.type=#{type}
+	         </if>
+	    	 <if test="parentId!=null">
+	            a.parent_id=#{parentId}
+	         </if>
+	    	 <if test="remark!=null">
+	            a.remark=#{remark}
+	         </if>
+	    	 <if test="createDate!=null">
+	            a.create_date=#{createDate}
+	         </if>
+	    	 <if test="status!=null">
+	            a.status=#{status}
+	         </if>
+	    	 <if test="updateDate!=null">
+	            a.update_date=#{updateDate}
+	         </if>
+	    	 <if test="creator!=null">
+	            a.creator=#{creator}
+	         </if>
+	    	 <if test="updater!=null">
+	            a.updater=#{updater}
+	         </if>
+        </where>
+    </sql>
+    
+    <!-- 新增-单个 -->
+     <insert id="save" parameterType="com.micro.cloud.frame.sys.entity.Department" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_department <trim prefix="(" suffix=")" suffixOverrides="," ><if test=" id != null" >id,</if><if test=" deptName != null" >dept_name,</if><if test=" deptAddress != null" >dept_address,</if><if test=" deptPhone != null" >dept_phone,</if><if test=" type != null" >type,</if><if test=" parentId != null" >parent_id,</if><if test=" remark != null" >remark,</if><if test=" createDate != null" >create_date,</if><if test=" status != null" >status,</if><if test=" updateDate != null" >update_date,</if><if test=" creator != null" >creator,</if><if test=" updater != null" >updater,</if></trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," ><if test=" id != null" >#{id},</if><if test=" deptName != null" >#{deptName},</if><if test=" deptAddress != null" >#{deptAddress},</if><if test=" deptPhone != null" >#{deptPhone},</if><if test=" type != null" >#{type},</if><if test=" parentId != null" >#{parentId},</if><if test=" remark != null" >#{remark},</if><if test=" createDate != null" >#{createDate},</if><if test=" status != null" >#{status},</if><if test=" updateDate != null" >#{updateDate},</if><if test=" creator != null" >#{creator},</if><if test=" updater != null" >#{updater},</if></trim>
+    </insert>
+    <!-- 删除-根据ID -->
+    <delete id="deleteById">
+        delete from sys_department  where id=#{id}
+    </delete>
+    <!-- 删除-批量删除多个 -->
+    <delete id="deleteByIds">
+		delete from sys_department where id in <foreach collection="array" item="item" open="(" close=")" separator=",">#{item}</foreach>
+	</delete>
+	<!-- 删除-所有 -->
+    <delete id="deleteAll">
+        delete from sys_department
+    </delete>
+    <!-- 修改-根据ID修改实体对象 -->
+    <update id="updateById" parameterType="com.micro.cloud.frame.sys.entity.Department">
+        update sys_department <set><if test="id !=null">id=#{id},</if><if test="deptName !=null">dept_name=#{deptName},</if><if test="deptAddress !=null">dept_address=#{deptAddress},</if><if test="deptPhone !=null">dept_phone=#{deptPhone},</if><if test="type !=null">type=#{type},</if><if test="parentId !=null">parent_id=#{parentId},</if><if test="remark !=null">remark=#{remark},</if><if test="createDate !=null">create_date=#{createDate},</if><if test="status !=null">status=#{status},</if><if test="updateDate !=null">update_date=#{updateDate},</if><if test="creator !=null">creator=#{creator},</if><if test="updater !=null">updater=#{updater},</if></set> where id=#{id}
+    </update>
+    <!-- 查询-根据ID查询 -->
+    <select id="findById" resultType="com.micro.cloud.frame.sys.entity.Department" parameterType="string">
+        SELECT <include refid="DepartmentColumns"/> FROM sys_department a where a.id=#{id}
+    </select>
+    <!-- 查询-根据ID查询 -->
+    <select id="findOne" resultType="com.micro.cloud.frame.sys.entity.Department" parameterType="com.micro.cloud.frame.sys.entity.Department">
+        SELECT <include refid="DepartmentColumns"/> FROM sys_department a <include refid="DepartmentWhere"/>
+    </select>
+    <!-- 查询-所有 -->
+    <select id="findAll" resultType="com.micro.cloud.frame.sys.entity.Department" parameterType="com.micro.cloud.frame.sys.entity.Department">
+        SELECT <include refid="DepartmentColumns"/> FROM sys_department a <include refid="DepartmentWhere"/>
+    </select>
+    <!-- 查询-所有VO -->
+    <select id="findAllVo" resultType="com.micro.cloud.frame.sys.vo.DepartmentVo" parameterType="com.micro.cloud.frame.sys.entity.Department">
+        SELECT <include refid="DepartmentColumns"/> FROM sys_department a <include refid="DepartmentWhere"/>
+    </select>
+    <!-- 查询-总数 -->
+    <select id="count" resultType="long">
+        SELECT count(a.id) FROM sys_department a 
+    </select>
+    
+</mapper>

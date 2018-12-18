@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>用户列表</title>
+	<link rel="stylesheet" type="text/css" href="/boot/css/common/base.css">
+	<script type="text/javascript" src="/boot/js/common/base.js"></script>
+</head>
+<body style="width: 100%;margin: 0px;">
+	<div id="searchPanel" class="easyui-panel" title="搜索条件" style="width:100%;height:100px;" data-options="border:false">
+		<form id="form_search" method="post" style="width: 100%;height:100%;" >
+		   	<div style="width: 100%;height:100%;display:flex;align-items:center;">
+			    <div style="width: 100%;">
+			        <input name="username" class="easyui-textbox" type="text" data-options="label:'账号',labelAlign:'right'" style="width: 250px;">
+			        <input name="name" class="easyui-textbox" type="text" data-options="label:'用户名',labelAlign:'right'" style="width: 250px;">
+			    	<input name="phone" class="easyui-textbox" type="text" data-options="label:'手机号码',labelAlign:'right'" style="width: 250px;">
+			    	<a id="btn_search" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
+			    	<a id="btn_reset" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-redo'">重置</a>
+			    </div>
+		    </div>
+		</form>
+	</div>
+	<table id="userDataGrid" title="用户列表" style="width:100%;height:500px;"></table>
+</body>
+<script type="text/javascript" src="/boot/js/sys/user/list.js"></script>
+</html>

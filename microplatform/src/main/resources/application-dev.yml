@@ -1,0 +1,102 @@
+user:
+  name: gsh
+  source: 'application.yml'
+server:
+  port: 80
+  servlet:
+    context-path: /boot
+
+spring:
+  mvc:
+    view:
+      prefix: /view/
+      suffix: .html
+  datasource:
+    url: jdbc:mysql://47.101.161.236:3306/boot?useSSL=false
+    username: root
+    password: GSHroot!@#456
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    open-in-view: false
+  cache:
+    type: redis
+    cache-names:
+      - sessions
+      - dicts
+      - user
+    ehcache:
+      config: classpath:conf/ehcache.xml
+  redis: 
+    host: 47.101.161.236
+    port: 6379
+    password: 
+    jedis:
+      pool:
+        max-active: 5
+        max-wait: 5000
+      
+mybatis: 
+  mapper-locations: classpath:mybatis/*/*.xml
+  type-aliases-package: com.gsh.**.entity
+  check-config-location: true
+  configuration:
+    cache-enabled: false
+    lazy-loading-enabled: false
+    aggressive-lazy-loading: true
+    multiple-result-sets-enabled: true
+    call-setters-on-nulls: true
+    use-column-label: true
+    auto-mapping-behavior: FULL
+    safe-result-handler-enabled: true
+    map-underscore-to-camel-case: true
+
+pagehelper:
+ autoDialect: true
+ closeConn: true
+ 
+logging:
+  file: D:\var\logs\myapp.log
+  level:
+    root: debug
+    org.springframework: warn
+    org.mybatis.spring: warn
+    org.aspectj.weaver: warn
+    org.apache.ibatis: warn
+    com.ibatis: warn
+    com.ibatis.common.jdbc.SimpleDataSource: warn
+    com.ibatis.common.jdbc.ScriptRunner: warn
+    com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate: warn
+    java.sql.Connection: debug
+    java.sql.Statement: debug
+    java.sql.PreparedStatement: debug
+    java.sql.ResultSet: debug
+    org.apache.shiro: warn
+    net.sf.ehcache: warn
+    freemarker: warn
+    org.apache: warn
+    org.quartz: warn
+    org.jboss: warn
+    org.hibernate: warn
+    springfox.documentation: warn
+    #com.alibaba.druid: warn
+    #com.zaxxer.hikari: warn
+    io.netty: warn
+    io.lettuce.core: warn
+
+
+#actuator配置           
+management: 
+  server:
+    port: 9001
+  endpoints:
+    web:
+      base-path: /monitor 
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always 
+    shutdown:
+      enabled: true
+    sessions:
+      enabled: true

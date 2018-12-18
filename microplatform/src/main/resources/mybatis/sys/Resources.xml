@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.cloud.sys.dao.IResourcesDao">
+
+    <sql id="ResourcesColumns">
+    a.id,
+    a.name,
+    a.url,
+    a.parent_id,
+    a.perm_code,
+    a.iconCls,
+    a.level,
+    a.sort,
+    a.type,
+    a.remark,
+    a.create_date,
+    a.update_date,
+    a.updater,
+    a.creator,
+    a.status
+    </sql>
+    <sql id="ResourcesWhere">
+    	<where>
+	    	 <if test="id!=null">
+	            a.id=#{id}
+	         </if>
+	    	 <if test="name!=null">
+	            a.name=#{name}
+	         </if>
+	    	 <if test="url!=null">
+	            a.url=#{url}
+	         </if>
+	    	 <if test="parentId!=null">
+	            a.parent_id=#{parentId}
+	         </if>
+	    	 <if test="permCode!=null">
+	            a.perm_code=#{permCode}
+	         </if>
+	    	 <if test="iconCls!=null">
+	            a.iconCls=#{iconCls}
+	         </if>
+	    	 <if test="level!=null">
+	            a.level=#{level}
+	         </if>
+	    	 <if test="sort!=null">
+	            a.sort=#{sort}
+	         </if>
+	    	 <if test="type!=null">
+	            a.type=#{type}
+	         </if>
+	    	 <if test="remark!=null">
+	            a.remark=#{remark}
+	         </if>
+	    	 <if test="createDate!=null">
+	            a.create_date=#{createDate}
+	         </if>
+	    	 <if test="updateDate!=null">
+	            a.update_date=#{updateDate}
+	         </if>
+	    	 <if test="updater!=null">
+	            a.updater=#{updater}
+	         </if>
+	    	 <if test="creator!=null">
+	            a.creator=#{creator}
+	         </if>
+	    	 <if test="status!=null">
+	            a.status=#{status}
+	         </if>
+        </where>
+    </sql>
+    
+    <!-- 新增-单个 -->
+     <insert id="save" parameterType="com.micro.cloud.frame.sys.entity.Resources" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_resources <trim prefix="(" suffix=")" suffixOverrides="," ><if test=" id != null" >id,</if><if test=" name != null" >name,</if><if test=" url != null" >url,</if><if test=" parentId != null" >parent_id,</if><if test=" permCode != null" >perm_code,</if><if test=" iconCls != null" >iconCls,</if><if test=" level != null" >level,</if><if test=" sort != null" >sort,</if><if test=" type != null" >type,</if><if test=" remark != null" >remark,</if><if test=" createDate != null" >create_date,</if><if test=" updateDate != null" >update_date,</if><if test=" updater != null" >updater,</if><if test=" creator != null" >creator,</if><if test=" status != null" >status,</if></trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," ><if test=" id != null" >#{id},</if><if test=" name != null" >#{name},</if><if test=" url != null" >#{url},</if><if test=" parentId != null" >#{parentId},</if><if test=" permCode != null" >#{permCode},</if><if test=" iconCls != null" >#{iconCls},</if><if test=" level != null" >#{level},</if><if test=" sort != null" >#{sort},</if><if test=" type != null" >#{type},</if><if test=" remark != null" >#{remark},</if><if test=" createDate != null" >#{createDate},</if><if test=" updateDate != null" >#{updateDate},</if><if test=" updater != null" >#{updater},</if><if test=" creator != null" >#{creator},</if><if test=" status != null" >#{status},</if></trim>
+    </insert>
+    <!-- 删除-根据ID -->
+    <delete id="deleteById">
+        delete from sys_resources  where id=#{id}
+    </delete>
+    <!-- 删除-批量删除多个 -->
+    <delete id="deleteByIds">
+		delete from sys_resources where id in <foreach collection="array" item="item" open="(" close=")" separator=",">#{item}</foreach>
+	</delete>
+	<!-- 删除-所有 -->
+    <delete id="deleteAll">
+        delete from sys_resources
+    </delete>
+    <!-- 修改-根据ID修改实体对象 -->
+    <update id="updateById" parameterType="com.micro.cloud.frame.sys.entity.Resources">
+        update sys_resources <set><if test="id !=null">id=#{id},</if><if test="name !=null">name=#{name},</if><if test="url !=null">url=#{url},</if><if test="parentId !=null">parent_id=#{parentId},</if><if test="permCode !=null">perm_code=#{permCode},</if><if test="iconCls !=null">iconCls=#{iconCls},</if><if test="level !=null">level=#{level},</if><if test="sort !=null">sort=#{sort},</if><if test="type !=null">type=#{type},</if><if test="remark !=null">remark=#{remark},</if><if test="createDate !=null">create_date=#{createDate},</if><if test="updateDate !=null">update_date=#{updateDate},</if><if test="updater !=null">updater=#{updater},</if><if test="creator !=null">creator=#{creator},</if><if test="status !=null">status=#{status},</if></set> where id=#{id}
+    </update>
+    <!-- 查询-根据ID查询 -->
+    <select id="findById" resultType="com.micro.cloud.frame.sys.entity.Resources" parameterType="string">
+        SELECT <include refid="ResourcesColumns"/> FROM sys_resources a where a.id=#{id}
+    </select>
+    <!-- 查询-根据ID查询 -->
+    <select id="findOne" resultType="com.micro.cloud.frame.sys.entity.Resources" parameterType="com.micro.cloud.frame.sys.entity.Resources">
+        SELECT <include refid="ResourcesColumns"/> FROM sys_resources a <include refid="ResourcesWhere"/>
+    </select>
+    <!-- 查询-所有 -->
+    <select id="findAll" resultType="com.micro.cloud.frame.sys.entity.Resources" parameterType="com.micro.cloud.frame.sys.entity.Resources">
+        SELECT <include refid="ResourcesColumns"/> FROM sys_resources a <include refid="ResourcesWhere"/>
+    </select>
+    <!-- 查询-所有VO -->
+    <select id="findAllVo" resultType="com.micro.cloud.frame.sys.vo.ResourcesVo" parameterType="com.micro.cloud.frame.sys.entity.Resources">
+        SELECT <include refid="ResourcesColumns"/> FROM sys_resources a <include refid="ResourcesWhere"/>
+    </select>
+    <!-- 查询-总数 -->
+    <select id="count" resultType="long">
+        SELECT count(a.id) FROM sys_resources a 
+    </select>
+    
+    <!-- 根据用户ID查询权限 -->
+    <select id="findByUserId" resultType="com.micro.cloud.frame.sys.entity.Resources" parameterType="Long">
+        SELECT * FROM v_user_role_resource where user_id=#{userId} 
+    </select>
+</mapper>

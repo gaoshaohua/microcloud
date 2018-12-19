@@ -1,0 +1,57 @@
+
+server:
+  port: 8081
+  servlet:
+    context-path: /platform
+
+spring:
+  mvc:
+    view:
+      prefix: /view/
+      suffix: .html
+  cache:
+    type: redis
+    cache-names:
+      - sessions
+      - dicts
+      - user
+  redis: 
+    host: 192.168.0.102
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-active: 5
+        max-wait: 5000
+ 
+logging:
+  file: D:\var\logs\platform.log
+  level:
+    root: debug
+    org.springframework: warn
+    org.mybatis.spring: warn
+    org.aspectj.weaver: warn
+    org.apache.ibatis: warn
+    com.ibatis: warn
+    com.ibatis.common.jdbc.SimpleDataSource: warn
+    com.ibatis.common.jdbc.ScriptRunner: warn
+    com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate: warn
+    java.sql.Connection: debug
+    java.sql.Statement: debug
+    java.sql.PreparedStatement: debug
+    java.sql.ResultSet: debug
+    org.apache.shiro: warn
+    net.sf.ehcache: warn
+    freemarker: warn
+    org.apache: warn
+    org.quartz: warn
+    org.jboss: warn
+    org.hibernate: warn
+    springfox.documentation: warn
+    #com.alibaba.druid: warn
+    #com.zaxxer.hikari: warn
+    io.netty: warn
+    io.lettuce.core: warn
+
+
+

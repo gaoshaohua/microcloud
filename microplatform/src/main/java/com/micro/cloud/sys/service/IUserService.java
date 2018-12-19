@@ -1,8 +1,8 @@
 package com.micro.cloud.sys.service;
 
 import com.micro.cloud.frame.commons.base.service.IBaseService;
-import com.micro.cloud.frame.sys.vo.UserVo;
-import com.micro.cloud.frame.sys.entity.User;
+import com.micro.cloud.sys.entity.User;
+import com.micro.cloud.sys.vo.UserVo;
 
 /**
  * 

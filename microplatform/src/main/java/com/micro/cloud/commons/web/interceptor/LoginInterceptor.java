@@ -13,7 +13,7 @@ import com.alibaba.fastjson.JSON;
 import com.micro.cloud.frame.commons.enums.ExceptionEnums;
 import com.micro.cloud.frame.commons.result.BaseResult;
 import com.micro.cloud.frame.commons.result.ResultUtils;
-import com.micro.cloud.frame.sys.vo.ActiveUser;
+import com.micro.cloud.sys.vo.ActiveUser;
 
 /**
  * 

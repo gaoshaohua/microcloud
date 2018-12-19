@@ -10,7 +10,7 @@ import com.micro.cloud.frame.commons.base.service.impl.BaseServiceImpl;
 import com.micro.cloud.frame.commons.enums.ExceptionEnums;
 import com.micro.cloud.frame.commons.exception.ExceptionParam;
 import com.micro.cloud.sys.dao.IResourcesDao;
-import com.micro.cloud.frame.sys.entity.Resources;
+import com.micro.cloud.sys.entity.Resources;
 import com.micro.cloud.sys.service.IResourcesService;
 
 @Service

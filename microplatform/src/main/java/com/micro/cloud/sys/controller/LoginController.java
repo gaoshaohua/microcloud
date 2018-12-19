@@ -22,8 +22,8 @@ import com.micro.cloud.frame.commons.enums.ExceptionEnums;
 import com.micro.cloud.frame.commons.exception.ExceptionParam;
 import com.micro.cloud.frame.commons.result.BaseResult;
 import com.micro.cloud.frame.commons.result.ResultUtils;
-import com.micro.cloud.frame.sys.vo.LoginVo;
 import com.micro.cloud.sys.service.IUserService;
+import com.micro.cloud.sys.vo.LoginVo;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

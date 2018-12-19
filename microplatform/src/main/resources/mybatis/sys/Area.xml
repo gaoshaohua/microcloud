@@ -50,7 +50,7 @@
     </sql>
     
     <!-- 新增-单个 -->
-     <insert id="save" parameterType="com.micro.cloud.frame.sys.entity.Area" useGeneratedKeys="true" keyProperty="id">
+     <insert id="save" parameterType="com.micro.cloud.sys.entity.Area" useGeneratedKeys="true" keyProperty="id">
         insert into sys_area <trim prefix="(" suffix=")" suffixOverrides="," ><if test=" id != null" >id,</if><if test=" areaCode != null" >area_code,</if><if test=" areaName != null" >area_name,</if><if test=" parentId != null" >parent_id,</if><if test=" shortName != null" >short_name,</if><if test=" lng != null" >lng,</if><if test=" lat != null" >lat,</if><if test=" level != null" >level,</if><if test=" sort != null" >sort,</if><if test=" status != null" >status,</if></trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," ><if test=" id != null" >#{id},</if><if test=" areaCode != null" >#{areaCode},</if><if test=" areaName != null" >#{areaName},</if><if test=" parentId != null" >#{parentId},</if><if test=" shortName != null" >#{shortName},</if><if test=" lng != null" >#{lng},</if><if test=" lat != null" >#{lat},</if><if test=" level != null" >#{level},</if><if test=" sort != null" >#{sort},</if><if test=" status != null" >#{status},</if></trim>
     </insert>
@@ -67,23 +67,23 @@
         delete from sys_area
     </delete>
     <!-- 修改-根据ID修改实体对象 -->
-    <update id="updateById" parameterType="com.micro.cloud.frame.sys.entity.Area">
+    <update id="updateById" parameterType="com.micro.cloud.sys.entity.Area">
         update sys_area <set><if test="id !=null">id=#{id},</if><if test="areaCode !=null">area_code=#{areaCode},</if><if test="areaName !=null">area_name=#{areaName},</if><if test="parentId !=null">parent_id=#{parentId},</if><if test="shortName !=null">short_name=#{shortName},</if><if test="lng !=null">lng=#{lng},</if><if test="lat !=null">lat=#{lat},</if><if test="level !=null">level=#{level},</if><if test="sort !=null">sort=#{sort},</if><if test="status !=null">status=#{status},</if></set> where id=#{id}
     </update>
     <!-- 查询-根据ID查询 -->
-    <select id="findById" resultType="com.micro.cloud.frame.sys.entity.Area" parameterType="string">
+    <select id="findById" resultType="com.micro.cloud.sys.entity.Area" parameterType="string">
         SELECT <include refid="AreaColumns"/> FROM sys_area a where a.id=#{id}
     </select>
     <!-- 查询-根据ID查询 -->
-    <select id="findOne" resultType="com.micro.cloud.frame.sys.entity.Area" parameterType="com.micro.cloud.frame.sys.entity.Area">
+    <select id="findOne" resultType="com.micro.cloud.sys.entity.Area" parameterType="com.micro.cloud.sys.entity.Area">
         SELECT <include refid="AreaColumns"/> FROM sys_area a <include refid="AreaWhere"/>
     </select>
     <!-- 查询-所有 -->
-    <select id="findAll" resultType="com.micro.cloud.frame.sys.entity.Area" parameterType="com.micro.cloud.frame.sys.entity.Area">
+    <select id="findAll" resultType="com.micro.cloud.sys.entity.Area" parameterType="com.micro.cloud.sys.entity.Area">
         SELECT <include refid="AreaColumns"/> FROM sys_area a <include refid="AreaWhere"/>
     </select>
     <!-- 查询-所有VO -->
-    <select id="findAllVo" resultType="com.micro.cloud.frame.sys.vo.AreaVo" parameterType="com.micro.cloud.frame.sys.entity.Area">
+    <select id="findAllVo" resultType="com.micro.cloud.sys.vo.AreaVo" parameterType="com.micro.cloud.sys.entity.Area">
         SELECT <include refid="AreaColumns"/> FROM sys_area a <include refid="AreaWhere"/>
     </select>
     <!-- 查询-总数 -->

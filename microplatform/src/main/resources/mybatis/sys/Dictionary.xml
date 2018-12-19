@@ -58,7 +58,7 @@
     </sql>
     
     <!-- 新增-单个 -->
-     <insert id="save" parameterType="com.micro.cloud.frame.sys.entity.Dictionary" useGeneratedKeys="true" keyProperty="id">
+     <insert id="save" parameterType="com.micro.cloud.sys.entity.Dictionary" useGeneratedKeys="true" keyProperty="id">
         insert into sys_dictionary <trim prefix="(" suffix=")" suffixOverrides="," ><if test=" id != null" >id,</if><if test=" label != null" >label,</if><if test=" value != null" >value,</if><if test=" selected != null" >selected,</if><if test=" parentId != null" >parent_id,</if><if test=" type != null" >type,</if><if test=" creator != null" >creator,</if><if test=" updater != null" >updater,</if><if test=" createDate != null" >create_date,</if><if test=" updateDate != null" >update_date,</if><if test=" status != null" >status,</if><if test=" remark != null" >remark,</if></trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," ><if test=" id != null" >#{id},</if><if test=" label != null" >#{label},</if><if test=" value != null" >#{value},</if><if test=" selected != null" >#{selected},</if><if test=" parentId != null" >#{parentId},</if><if test=" type != null" >#{type},</if><if test=" creator != null" >#{creator},</if><if test=" updater != null" >#{updater},</if><if test=" createDate != null" >#{createDate},</if><if test=" updateDate != null" >#{updateDate},</if><if test=" status != null" >#{status},</if><if test=" remark != null" >#{remark},</if></trim>
     </insert>
@@ -75,23 +75,23 @@
         delete from sys_dictionary
     </delete>
     <!-- 修改-根据ID修改实体对象 -->
-    <update id="updateById" parameterType="com.micro.cloud.frame.sys.entity.Dictionary">
+    <update id="updateById" parameterType="com.micro.cloud.sys.entity.Dictionary">
         update sys_dictionary <set><if test="id !=null">id=#{id},</if><if test="label !=null">label=#{label},</if><if test="value !=null">value=#{value},</if><if test="selected !=null">selected=#{selected},</if><if test="parentId !=null">parent_id=#{parentId},</if><if test="type !=null">type=#{type},</if><if test="creator !=null">creator=#{creator},</if><if test="updater !=null">updater=#{updater},</if><if test="createDate !=null">create_date=#{createDate},</if><if test="updateDate !=null">update_date=#{updateDate},</if><if test="status !=null">status=#{status},</if><if test="remark !=null">remark=#{remark},</if></set> where id=#{id}
     </update>
     <!-- 查询-根据ID查询 -->
-    <select id="findById" resultType="com.micro.cloud.frame.sys.entity.Dictionary" parameterType="string">
+    <select id="findById" resultType="com.micro.cloud.sys.entity.Dictionary" parameterType="string">
         SELECT <include refid="DictionaryColumns"/> FROM sys_dictionary a where a.id=#{id}
     </select>
     <!-- 查询-根据ID查询 -->
-    <select id="findOne" resultType="com.micro.cloud.frame.sys.entity.Dictionary" parameterType="com.micro.cloud.frame.sys.entity.Dictionary">
+    <select id="findOne" resultType="com.micro.cloud.sys.entity.Dictionary" parameterType="com.micro.cloud.sys.entity.Dictionary">
         SELECT <include refid="DictionaryColumns"/> FROM sys_dictionary a <include refid="DictionaryWhere"/>
     </select>
     <!-- 查询-所有 -->
-    <select id="findAll" resultType="com.micro.cloud.frame.sys.entity.Dictionary" parameterType="com.micro.cloud.frame.sys.entity.Dictionary">
+    <select id="findAll" resultType="com.micro.cloud.sys.entity.Dictionary" parameterType="com.micro.cloud.sys.entity.Dictionary">
         SELECT <include refid="DictionaryColumns"/> FROM sys_dictionary a <include refid="DictionaryWhere"/>
     </select>
     <!-- 查询-所有VO -->
-    <select id="findAllVo" resultType="com.micro.cloud.frame.sys.vo.DictionaryVo" parameterType="com.micro.cloud.frame.sys.entity.Dictionary">
+    <select id="findAllVo" resultType="com.micro.cloud.sys.vo.DictionaryVo" parameterType="com.micro.cloud.sys.entity.Dictionary">
         SELECT <include refid="DictionaryColumns"/> FROM sys_dictionary a <include refid="DictionaryWhere"/>
     </select>
     <!-- 查询-总数 -->

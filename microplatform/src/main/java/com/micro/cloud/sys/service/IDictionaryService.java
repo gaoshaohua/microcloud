@@ -1,7 +1,7 @@
 package com.micro.cloud.sys.service;
 
 import com.micro.cloud.frame.commons.base.service.IBaseService;
-import com.micro.cloud.frame.sys.entity.Dictionary;
+import com.micro.cloud.sys.entity.Dictionary;
 
 /**
  * 数据字典service层接口

@@ -20,7 +20,7 @@ import com.micro.cloud.frame.commons.exception.ExceptionParam;
 import com.micro.cloud.frame.commons.result.BaseResult;
 import com.micro.cloud.frame.commons.result.ResultUtils;
 import com.micro.cloud.kit.web.WebKit;
-import com.micro.cloud.frame.sys.entity.User;
+import com.micro.cloud.sys.entity.User;
 import com.micro.cloud.sys.service.IUserService;
 
 /**

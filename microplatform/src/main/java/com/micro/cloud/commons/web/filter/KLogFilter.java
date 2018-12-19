@@ -1,4 +1,4 @@
-package com.micro.cloud.frame.commons.security.shiro.filter;
+package com.micro.cloud.commons.web.filter;
 
 import java.util.Map;
 
@@ -14,11 +14,11 @@ import org.springframework.core.NamedThreadLocal;
 
 import com.alibaba.fastjson.JSON;
 import com.micro.cloud.frame.kit.DateKit;
-import com.micro.cloud.frame.kit.web.ShiroKit;
 import com.micro.cloud.frame.kit.web.UserAgentKit;
 import com.micro.cloud.frame.kit.web.WebKit;
-import com.micro.cloud.frame.sys.vo.ActiveUser;
-import com.micro.cloud.frame.sys.vo.LogVo;
+import com.micro.cloud.kit.web.ShiroKit;
+import com.micro.cloud.sys.vo.ActiveUser;
+import com.micro.cloud.sys.vo.LogVo;
 
 /**
  * 系统日志拦截器

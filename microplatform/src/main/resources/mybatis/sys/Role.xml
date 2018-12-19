@@ -46,7 +46,7 @@
     </sql>
     
     <!-- 新增-单个 -->
-     <insert id="save" parameterType="com.micro.cloud.frame.sys.entity.Role" useGeneratedKeys="true" keyProperty="id">
+     <insert id="save" parameterType="com.micro.cloud.sys.entity.Role" useGeneratedKeys="true" keyProperty="id">
         insert into sys_role <trim prefix="(" suffix=")" suffixOverrides="," ><if test=" id != null" >id,</if><if test=" roleName != null" >role_name,</if><if test=" roleCode != null" >role_code,</if><if test=" status != null" >status,</if><if test=" remark != null" >remark,</if><if test=" createDate != null" >create_date,</if><if test=" updateDate != null" >update_date,</if><if test=" creator != null" >creator,</if><if test=" updater != null" >updater,</if></trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," ><if test=" id != null" >#{id},</if><if test=" roleName != null" >#{roleName},</if><if test=" roleCode != null" >#{roleCode},</if><if test=" status != null" >#{status},</if><if test=" remark != null" >#{remark},</if><if test=" createDate != null" >#{createDate},</if><if test=" updateDate != null" >#{updateDate},</if><if test=" creator != null" >#{creator},</if><if test=" updater != null" >#{updater},</if></trim>
     </insert>
@@ -63,23 +63,23 @@
         delete from sys_role
     </delete>
     <!-- 修改-根据ID修改实体对象 -->
-    <update id="updateById" parameterType="com.micro.cloud.frame.sys.entity.Role">
+    <update id="updateById" parameterType="com.micro.cloud.sys.entity.Role">
         update sys_role <set><if test="id !=null">id=#{id},</if><if test="roleName !=null">role_name=#{roleName},</if><if test="roleCode !=null">role_code=#{roleCode},</if><if test="status !=null">status=#{status},</if><if test="remark !=null">remark=#{remark},</if><if test="createDate !=null">create_date=#{createDate},</if><if test="updateDate !=null">update_date=#{updateDate},</if><if test="creator !=null">creator=#{creator},</if><if test="updater !=null">updater=#{updater},</if></set> where id=#{id}
     </update>
     <!-- 查询-根据ID查询 -->
-    <select id="findById" resultType="com.micro.cloud.frame.sys.entity.Role" parameterType="string">
+    <select id="findById" resultType="com.micro.cloud.sys.entity.Role" parameterType="string">
         SELECT <include refid="RoleColumns"/> FROM sys_role a where a.id=#{id}
     </select>
     <!-- 查询-根据ID查询 -->
-    <select id="findOne" resultType="com.micro.cloud.frame.sys.entity.Role" parameterType="com.micro.cloud.frame.sys.entity.Role">
+    <select id="findOne" resultType="com.micro.cloud.sys.entity.Role" parameterType="com.micro.cloud.sys.entity.Role">
         SELECT <include refid="RoleColumns"/> FROM sys_role a <include refid="RoleWhere"/>
     </select>
     <!-- 查询-所有 -->
-    <select id="findAll" resultType="com.micro.cloud.frame.sys.entity.Role" parameterType="com.micro.cloud.frame.sys.entity.Role">
+    <select id="findAll" resultType="com.micro.cloud.sys.entity.Role" parameterType="com.micro.cloud.sys.entity.Role">
         SELECT <include refid="RoleColumns"/> FROM sys_role a <include refid="RoleWhere"/>
     </select>
     <!-- 查询-所有VO -->
-    <select id="findAllVo" resultType="com.micro.cloud.frame.sys.vo.RoleVo" parameterType="com.micro.cloud.frame.sys.entity.Role">
+    <select id="findAllVo" resultType="com.micro.cloud.sys.vo.RoleVo" parameterType="com.micro.cloud.sys.entity.Role">
         SELECT <include refid="RoleColumns"/> FROM sys_role a <include refid="RoleWhere"/>
     </select>
     <!-- 查询-总数 -->
@@ -89,7 +89,7 @@
     
     
     <!-- 查询-根据用户ID -->
-    <select id="findByUserId" resultType="com.micro.cloud.frame.sys.entity.Role" parameterType="Long">
+    <select id="findByUserId" resultType="com.micro.cloud.sys.entity.Role" parameterType="Long">
         SELECT  <include refid="RoleColumns"/>  FROM sys_role a LEFT JOIN sys_user_role ur ON  a.id=ur.role_id WHERE ur.user_id=#{userId} 
     </select>
 </mapper>

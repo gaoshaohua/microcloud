@@ -1,7 +1,7 @@
 package com.micro.cloud.sys.service;
 
 import com.micro.cloud.frame.commons.base.service.IBaseService;
-import com.micro.cloud.frame.sys.entity.Log;
+import com.micro.cloud.sys.entity.Log;
 
 /**
  * 系统日志service层接口

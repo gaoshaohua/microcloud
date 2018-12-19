@@ -9,7 +9,7 @@ import com.micro.cloud.frame.commons.base.controller.BaseController;
 import com.micro.cloud.frame.commons.result.BaseResult;
 import com.micro.cloud.frame.commons.result.ResultUtils;
 import com.micro.cloud.frame.kit.Constant;
-import com.micro.cloud.frame.sys.entity.Resources;
+import com.micro.cloud.sys.entity.Resources;
 import com.micro.cloud.sys.service.IResourcesService;
 
 /**

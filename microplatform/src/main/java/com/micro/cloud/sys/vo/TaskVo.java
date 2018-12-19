@@ -1,6 +1,6 @@
-package com.micro.cloud.frame.sys.vo;
+package com.micro.cloud.sys.vo;
 
-import com.micro.cloud.frame.sys.entity.Task;
+import com.micro.cloud.sys.entity.Task;
 
 /**
  * 

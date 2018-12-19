@@ -62,7 +62,7 @@
     </sql>
     
     <!-- 新增-单个 -->
-     <insert id="save" parameterType="com.micro.cloud.frame.sys.entity.Task" useGeneratedKeys="true" keyProperty="id">
+     <insert id="save" parameterType="com.micro.cloud.sys.entity.Task" useGeneratedKeys="true" keyProperty="id">
         insert into sys_task <trim prefix="(" suffix=")" suffixOverrides="," ><if test=" id != null" >id,</if><if test=" jobName != null" >job_name,</if><if test=" jobGroup != null" >job_group,</if><if test=" cron != null" >cron,</if><if test=" beanClass != null" >bean_class,</if><if test=" isConcurrent != null" >is_concurrent,</if><if test=" methodName != null" >method_name,</if><if test=" creator != null" >creator,</if><if test=" createDate != null" >create_date,</if><if test=" updater != null" >updater,</if><if test=" updateDate != null" >update_date,</if><if test=" remark != null" >remark,</if><if test=" status != null" >status,</if></trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," ><if test=" id != null" >#{id},</if><if test=" jobName != null" >#{jobName},</if><if test=" jobGroup != null" >#{jobGroup},</if><if test=" cron != null" >#{cron},</if><if test=" beanClass != null" >#{beanClass},</if><if test=" isConcurrent != null" >#{isConcurrent},</if><if test=" methodName != null" >#{methodName},</if><if test=" creator != null" >#{creator},</if><if test=" createDate != null" >#{createDate},</if><if test=" updater != null" >#{updater},</if><if test=" updateDate != null" >#{updateDate},</if><if test=" remark != null" >#{remark},</if><if test=" status != null" >#{status},</if></trim>
     </insert>
@@ -79,23 +79,23 @@
         delete from sys_task
     </delete>
     <!-- 修改-根据ID修改实体对象 -->
-    <update id="updateById" parameterType="com.micro.cloud.frame.sys.entity.Task">
+    <update id="updateById" parameterType="com.micro.cloud.sys.entity.Task">
         update sys_task <set><if test="id !=null">id=#{id},</if><if test="jobName !=null">job_name=#{jobName},</if><if test="jobGroup !=null">job_group=#{jobGroup},</if><if test="cron !=null">cron=#{cron},</if><if test="beanClass !=null">bean_class=#{beanClass},</if><if test="isConcurrent !=null">is_concurrent=#{isConcurrent},</if><if test="methodName !=null">method_name=#{methodName},</if><if test="creator !=null">creator=#{creator},</if><if test="createDate !=null">create_date=#{createDate},</if><if test="updater !=null">updater=#{updater},</if><if test="updateDate !=null">update_date=#{updateDate},</if><if test="remark !=null">remark=#{remark},</if><if test="status !=null">status=#{status},</if></set> where id=#{id}
     </update>
     <!-- 查询-根据ID查询 -->
-    <select id="findById" resultType="com.micro.cloud.frame.sys.entity.Task" parameterType="string">
+    <select id="findById" resultType="com.micro.cloud.sys.entity.Task" parameterType="string">
         SELECT <include refid="TaskColumns"/> FROM sys_task a where a.id=#{id}
     </select>
     <!-- 查询-根据ID查询 -->
-    <select id="findOne" resultType="com.micro.cloud.frame.sys.entity.Task" parameterType="com.micro.cloud.frame.sys.entity.Task">
+    <select id="findOne" resultType="com.micro.cloud.sys.entity.Task" parameterType="com.micro.cloud.sys.entity.Task">
         SELECT <include refid="TaskColumns"/> FROM sys_task a <include refid="TaskWhere"/>
     </select>
     <!-- 查询-所有 -->
-    <select id="findAll" resultType="com.micro.cloud.frame.sys.entity.Task" parameterType="com.micro.cloud.frame.sys.entity.Task">
+    <select id="findAll" resultType="com.micro.cloud.sys.entity.Task" parameterType="com.micro.cloud.sys.entity.Task">
         SELECT <include refid="TaskColumns"/> FROM sys_task a <include refid="TaskWhere"/>
     </select>
     <!-- 查询-所有VO -->
-    <select id="findAllVo" resultType="com.micro.cloud.frame.sys.vo.TaskVo" parameterType="com.micro.cloud.frame.sys.entity.Task">
+    <select id="findAllVo" resultType="com.micro.cloud.sys.vo.TaskVo" parameterType="com.micro.cloud.sys.entity.Task">
         SELECT <include refid="TaskColumns"/> FROM sys_task a <include refid="TaskWhere"/>
     </select>
     <!-- 查询-总数 -->

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.micro.cloud.frame.commons.base.service.IBaseService;
-import com.micro.cloud.frame.sys.entity.Role;
+import com.micro.cloud.sys.entity.Role;
 
 /**
  * 

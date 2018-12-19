@@ -1,6 +1,6 @@
-package com.micro.cloud.frame.sys.vo;
+package com.micro.cloud.sys.vo;
 
-import com.micro.cloud.frame.sys.entity.Dictionary;
+import com.micro.cloud.sys.entity.Dictionary;
 
 /**
  * 

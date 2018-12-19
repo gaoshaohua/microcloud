@@ -10,10 +10,10 @@ import com.micro.cloud.frame.commons.base.service.impl.BaseServiceImpl;
 import com.micro.cloud.frame.commons.enums.ExceptionEnums;
 import com.micro.cloud.frame.commons.exception.ExceptionParam;
 import com.micro.cloud.frame.kit.StringKit;
-import com.micro.cloud.frame.sys.vo.UserVo;
 import com.micro.cloud.sys.dao.IUserDao;
-import com.micro.cloud.frame.sys.entity.User;
+import com.micro.cloud.sys.entity.User;
 import com.micro.cloud.sys.service.IUserService;
+import com.micro.cloud.sys.vo.UserVo;
 
 @Service
 public class UserServiceImpl extends BaseServiceImpl<User>

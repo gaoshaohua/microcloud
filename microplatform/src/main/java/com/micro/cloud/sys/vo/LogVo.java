@@ -1,8 +1,8 @@
-package com.micro.cloud.frame.sys.vo;
+package com.micro.cloud.sys.vo;
 
 import java.io.Serializable;
 
-import com.micro.cloud.frame.sys.entity.Log;
+import com.micro.cloud.sys.entity.Log;
 
 /**
  * 

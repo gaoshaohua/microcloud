@@ -1,7 +1,7 @@
 package com.micro.cloud.sys.service;
 
 import com.micro.cloud.frame.commons.base.service.IBaseService;
-import com.micro.cloud.frame.sys.entity.Department;
+import com.micro.cloud.sys.entity.Department;
 
 /**
  * 部门管理service层接口

@@ -1,4 +1,4 @@
-package com.micro.cloud.frame.sys.vo;
+package com.micro.cloud.sys.vo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,9 +7,9 @@ import java.util.Set;
 
 import com.google.common.collect.Sets;
 import com.micro.cloud.frame.kit.StringKit;
-import com.micro.cloud.frame.sys.entity.Resources;
-import com.micro.cloud.frame.sys.entity.Role;
-import com.micro.cloud.frame.sys.entity.User;
+import com.micro.cloud.sys.entity.Resources;
+import com.micro.cloud.sys.entity.Role;
+import com.micro.cloud.sys.entity.User;
 
 /**
  * 

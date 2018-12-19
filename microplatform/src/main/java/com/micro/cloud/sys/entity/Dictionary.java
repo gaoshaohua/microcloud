@@ -1,4 +1,4 @@
-package com.micro.cloud.frame.sys.entity;
+package com.micro.cloud.sys.entity;
 
 import java.io.Serializable;
 

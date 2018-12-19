@@ -66,7 +66,7 @@
     </sql>
     
     <!-- 新增-单个 -->
-     <insert id="save" parameterType="com.micro.cloud.frame.sys.entity.Log" useGeneratedKeys="true" keyProperty="id">
+     <insert id="save" parameterType="com.micro.cloud.sys.entity.Log" useGeneratedKeys="true" keyProperty="id">
         insert into sys_log <trim prefix="(" suffix=")" suffixOverrides="," ><if test=" id != null" >id,</if><if test=" ip != null" >ip,</if><if test=" userAgent != null" >user_agent,</if><if test=" reqOk != null" >req_ok,</if><if test=" reqMethod != null" >req_method,</if><if test=" reqParam != null" >req_param,</if><if test=" reqUrl != null" >req_url,</if><if test=" resParam != null" >res_param,</if><if test=" creator != null" >creator,</if><if test=" createDate != null" >create_date,</if><if test=" remark != null" >remark,</if><if test=" timeConsuming != null" >time_consuming,</if><if test=" exception != null" >exception,</if><if test=" status != null" >status,</if></trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," ><if test=" id != null" >#{id},</if><if test=" ip != null" >#{ip},</if><if test=" userAgent != null" >#{userAgent},</if><if test=" reqOk != null" >#{reqOk},</if><if test=" reqMethod != null" >#{reqMethod},</if><if test=" reqParam != null" >#{reqParam},</if><if test=" reqUrl != null" >#{reqUrl},</if><if test=" resParam != null" >#{resParam},</if><if test=" creator != null" >#{creator},</if><if test=" createDate != null" >#{createDate},</if><if test=" remark != null" >#{remark},</if><if test=" timeConsuming != null" >#{timeConsuming},</if><if test=" exception != null" >#{exception},</if><if test=" status != null" >#{status},</if></trim>
     </insert>
@@ -83,23 +83,23 @@
         delete from sys_log
     </delete>
     <!-- 修改-根据ID修改实体对象 -->
-    <update id="updateById" parameterType="com.micro.cloud.frame.sys.entity.Log">
+    <update id="updateById" parameterType="com.micro.cloud.sys.entity.Log">
         update sys_log <set><if test="id !=null">id=#{id},</if><if test="ip !=null">ip=#{ip},</if><if test="userAgent !=null">user_agent=#{userAgent},</if><if test="reqOk !=null">req_ok=#{reqOk},</if><if test="reqMethod !=null">req_method=#{reqMethod},</if><if test="reqParam !=null">req_param=#{reqParam},</if><if test="reqUrl !=null">req_url=#{reqUrl},</if><if test="resParam !=null">res_param=#{resParam},</if><if test="creator !=null">creator=#{creator},</if><if test="createDate !=null">create_date=#{createDate},</if><if test="remark !=null">remark=#{remark},</if><if test="timeConsuming !=null">time_consuming=#{timeConsuming},</if><if test="exception !=null">exception=#{exception},</if><if test="status !=null">status=#{status},</if></set> where id=#{id}
     </update>
     <!-- 查询-根据ID查询 -->
-    <select id="findById" resultType="com.micro.cloud.frame.sys.entity.Log" parameterType="string">
+    <select id="findById" resultType="com.micro.cloud.sys.entity.Log" parameterType="string">
         SELECT <include refid="LogColumns"/> FROM sys_log a where a.id=#{id}
     </select>
     <!-- 查询-根据ID查询 -->
-    <select id="findOne" resultType="com.micro.cloud.frame.sys.entity.Log" parameterType="com.micro.cloud.frame.sys.entity.Log">
+    <select id="findOne" resultType="com.micro.cloud.sys.entity.Log" parameterType="com.micro.cloud.sys.entity.Log">
         SELECT <include refid="LogColumns"/> FROM sys_log a <include refid="LogWhere"/>
     </select>
     <!-- 查询-所有 -->
-    <select id="findAll" resultType="com.micro.cloud.frame.sys.entity.Log" parameterType="com.micro.cloud.frame.sys.entity.Log">
+    <select id="findAll" resultType="com.micro.cloud.sys.entity.Log" parameterType="com.micro.cloud.sys.entity.Log">
         SELECT <include refid="LogColumns"/> FROM sys_log a <include refid="LogWhere"/>
     </select>
     <!-- 查询-所有VO -->
-    <select id="findAllVo" resultType="com.micro.cloud.frame.sys.vo.LogVo" parameterType="com.micro.cloud.frame.sys.entity.Log">
+    <select id="findAllVo" resultType="com.micro.cloud.sys.vo.LogVo" parameterType="com.micro.cloud.sys.entity.Log">
         SELECT <include refid="LogColumns"/> FROM sys_log a <include refid="LogWhere"/>
     </select>
     <!-- 查询-总数 -->

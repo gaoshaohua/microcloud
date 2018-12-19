@@ -1,4 +1,4 @@
-package com.micro.cloud.frame.kit.web;
+package com.micro.cloud.kit.web;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -15,7 +15,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.micro.cloud.frame.kit.Constant;
 import com.micro.cloud.frame.kit.SpringKit;
-import com.micro.cloud.frame.sys.vo.ActiveUser;
+import com.micro.cloud.sys.vo.ActiveUser;
 
 public class ShiroKit {
 

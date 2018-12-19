@@ -12,14 +12,14 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
 import com.micro.cloud.frame.kit.SpringKit;
-import com.micro.cloud.frame.sys.vo.ActiveUser;
-import com.micro.cloud.frame.sys.vo.UserVo;
 import com.micro.cloud.sys.service.IResourcesService;
 import com.micro.cloud.sys.service.IRoleService;
 import com.micro.cloud.sys.service.IUserService;
 import com.micro.cloud.sys.service.impl.ResourcesServiceImpl;
 import com.micro.cloud.sys.service.impl.RoleServiceImpl;
 import com.micro.cloud.sys.service.impl.UserServiceImpl;
+import com.micro.cloud.sys.vo.ActiveUser;
+import com.micro.cloud.sys.vo.UserVo;
 
 /**
  * 自定义JDBC Realm实现

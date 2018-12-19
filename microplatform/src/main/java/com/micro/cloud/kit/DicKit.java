@@ -7,7 +7,7 @@ import com.micro.cloud.frame.commons.enums.CacheEnums;
 import com.micro.cloud.frame.kit.CacheKit;
 import com.micro.cloud.frame.kit.Constant;
 import com.micro.cloud.frame.kit.SpringKit;
-import com.micro.cloud.frame.sys.entity.Dictionary;
+import com.micro.cloud.sys.entity.Dictionary;
 import com.micro.cloud.sys.service.IDictionaryService;
 import com.micro.cloud.sys.service.impl.DictionaryServiceImpl;
 

@@ -1,7 +1,7 @@
 package com.micro.cloud.sys.dao;
 
 import com.micro.cloud.frame.commons.base.dao.IBaseDao;
-import com.micro.cloud.frame.sys.entity.User;
+import com.micro.cloud.sys.entity.User;
 
 /**
  * 

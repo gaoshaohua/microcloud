@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.micro.cloud.frame.commons.base.dao.IBaseDao;
-import com.micro.cloud.frame.sys.entity.Resources;
+import com.micro.cloud.sys.entity.Resources;
 
 /**
  * 

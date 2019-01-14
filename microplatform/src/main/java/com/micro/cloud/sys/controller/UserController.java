@@ -23,12 +23,16 @@ import com.micro.cloud.kit.web.WebKit;
 import com.micro.cloud.sys.entity.User;
 import com.micro.cloud.sys.service.IUserService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 /**
  * @desc 控制器
  * @author gsh
  * @version 1.0
  * @date 2018年05月31日 05:22:29
  */
+@Api(tags="用户管理")
 @RestController
 @RequestMapping("/sys/user")
 public class UserController extends BaseController {
@@ -36,6 +40,7 @@ public class UserController extends BaseController {
 	@Autowired
 	private IUserService userService;
 
+	@ApiOperation(value = "保存用户信息",notes = "保存用户信息notes")
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public BaseResult save(@RequestBody User user) throws Exception {
 		user.setPassword(new Md5Hash(user.getPassword(), "", 2).toString());

@@ -12,7 +12,7 @@ spring:
       prefix: /view/
       suffix: .html
   datasource:
-    url: jdbc:mysql://192.168.0.102:3306/boot?useSSL=false
+    url: jdbc:mysql://47.101.161.236:3306/boot?useSSL=false
     username: root
     password: GSHroot!@#456
     driver-class-name: com.mysql.jdbc.Driver
@@ -27,7 +27,7 @@ spring:
     ehcache:
       config: classpath:conf/ehcache.xml
   redis: 
-    host: 192.168.0.102
+    host: 47.101.161.236
     port: 6379
     password: 
     jedis:

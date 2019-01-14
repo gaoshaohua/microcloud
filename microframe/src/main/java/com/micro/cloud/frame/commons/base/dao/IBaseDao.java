@@ -3,7 +3,9 @@ package com.micro.cloud.frame.commons.base.dao;
 import java.io.Serializable;
 import java.util.List;
 
-public interface IBaseDao<T> {
+import org.springframework.data.repository.Repository;
+
+public interface IBaseDao<T>{
 
 	/**
 	 * 

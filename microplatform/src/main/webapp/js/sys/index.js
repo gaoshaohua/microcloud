@@ -13,9 +13,9 @@ $(function() {
 				that.login();
 			});
 			$('#form_login').unbind().bind('keypress', function(event) {
-			　　if (event.keyCode == "13") {
-			　　　　that.login();
-			　　}
+				if (event.keyCode == "13") {
+					that.login();
+				}
 			});
 			
 			

@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@MapperScan(basePackages = "com.micro.cloud.**.dao")
+@MapperScan(basePackages = "com.micro.cloud.sys.**.dao")
 public class MyBatisConfig {
 
 }

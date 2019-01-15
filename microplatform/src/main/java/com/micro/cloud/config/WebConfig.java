@@ -1,9 +1,11 @@
 package com.micro.cloud.config;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -67,6 +69,8 @@ public class WebConfig implements WebMvcConfigurer {
 				SerializerFeature.WriteNullBooleanAsFalse);
 		fastJsonConfig.setDateFormat("yyyy-MM-dd HH:mm:ss");
 		converter.setFastJsonConfig(fastJsonConfig);
+		converter.setDefaultCharset(StandardCharsets.UTF_8);
 		converters.add(converter);
+		
 	}
 }

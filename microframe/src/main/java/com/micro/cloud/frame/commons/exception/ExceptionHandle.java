@@ -20,7 +20,7 @@ public class ExceptionHandle {
 	public BaseResult Exception(Exception e) {
 		log.error("请求异常:" + ExceptionUtils.getStackTrace(e));
 		BaseResult result = ResultUtils.fail();
-		result.setResMsg(e.getMessage());
+		result.setMsg(e.getMessage());
 		return result;
 	}
 
@@ -29,7 +29,7 @@ public class ExceptionHandle {
 	public BaseResult RuntimeException(Exception e) {
 		log.error("请求异常:" + ExceptionUtils.getStackTrace(e));
 		BaseResult result = ResultUtils.fail();
-		result.setResMsg(e.getMessage());
+		result.setMsg(e.getMessage());
 		return result;
 	}
 
@@ -38,8 +38,8 @@ public class ExceptionHandle {
 	public BaseResult baseException(ExceptionBase e) {
 		log.error("请求异常:" + ExceptionUtils.getStackTrace(e));
 		BaseResult result = ResultUtils.fail();
-		result.setResCode(e.getErrCode());
-		result.setResMsg(e.getErrMsg());
+		result.setCode(e.getErrCode());
+		result.setMsg(e.getErrMsg());
 		return result;
 	}
 
@@ -48,8 +48,8 @@ public class ExceptionHandle {
 	public BaseResult paramException(ExceptionParam e) {
 		log.error("请求异常:" + ExceptionUtils.getStackTrace(e));
 		BaseResult result = ResultUtils.fail();
-		result.setResCode(e.getErrCode());
-		result.setResMsg(e.getErrMsg() + "(" + e.getParamName() + " is "
+		result.setCode(e.getErrCode());
+		result.setMsg(e.getErrMsg() + "(" + e.getParamName() + " is "
 				+ e.getParamValue() + ")");
 		return result;
 	}

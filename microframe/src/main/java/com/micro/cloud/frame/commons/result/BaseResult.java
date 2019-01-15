@@ -8,54 +8,56 @@ import com.micro.cloud.frame.commons.enums.ExceptionEnums;
 
 public class BaseResult {
 
-	private Integer resCode = ExceptionEnums.SYS_SUCCESS.getResCode();
+	private Integer code = ExceptionEnums.SYS_SUCCESS.getResCode();
 
-	private String resMsg = ExceptionEnums.SYS_SUCCESS.getResMsg();
+	private String msg = ExceptionEnums.SYS_SUCCESS.getResMsg();
 
-	private Map<String, Object> resData = new HashMap<String, Object>();
+	private Map<String, Object> data = new HashMap<String, Object>();
 
 	public BaseResult() {
 	}
 
 	public BaseResult(ExceptionEnums emsException) {
-		this.resCode = emsException.getResCode();
-		this.resMsg = emsException.getResMsg();
+		this.code = emsException.getResCode();
+		this.msg = emsException.getResMsg();
 	}
 
-	public BaseResult(Integer resCode, String resMsg,
-			Map<String, Object> resData) {
+	public BaseResult(Integer code, String msg,
+			Map<String, Object> data) {
 		super();
-		this.resCode = resCode;
-		this.resMsg = resMsg;
-		this.resData = resData;
+		this.code = code;
+		this.msg = msg;
+		this.data = data;
 	}
 
-	public Integer getResCode() {
-		return resCode;
-	}
-
-	public void setResCode(Integer resCode) {
-		this.resCode = resCode;
-	}
-
-	public String getResMsg() {
-		return resMsg;
-	}
-
-	public void setResMsg(String resMsg) {
-		this.resMsg = resMsg;
-	}
-
-	public Map<String, Object> getResData() {
-		return resData;
-	}
-
-	public void setResData(Map<String, Object> resData) {
-		this.resData = resData;
-	}
+	
 
 	public void setResData(List<?> rows, long total) {
-		this.resData.put("rows", rows);
-		this.resData.put("total", total);
+		this.data.put("rows", rows);
+		this.data.put("total", total);
 	}
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public Map<String, Object> getData() {
+        return data;
+    }
+
+    public void setData(Map<String, Object> data) {
+        this.data = data;
+    }
 }
